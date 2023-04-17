@@ -1,0 +1,21 @@
+services:
+  nginx:
+    url: http://bundle:5050
+  logger:
+    url: http://logger:3000/
+
+bundles:
+  policy:
+    service: nginx
+    resource: bundle.tar.gz
+    signing:
+      keyid: verifier
+decision_logs:
+  service: logger
+  reporting:
+    min_delay_seconds: 5
+    max_delay_seconds: 10
+
+keys:
+  verifier:
+    key: changeme

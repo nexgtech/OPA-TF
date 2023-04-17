@@ -1,0 +1,10 @@
+1. Create a script to sign the policy and publish the policy to bundle server
+2. Add an entry to database about the rules that are added in the policy
+3. Enable token based authentication to pull bundles from bundle server
+4. Configure OPA server to fetch and verify the signature of the policy from the bundle server
+5. Update the IaC pipeline to convert the tf plan output to JSON format
+6. Identify the resources list from the tf plan json and list only those applicable rules to the user 
+7. Create API to pick the rules from the policy list and send those rule to OPA server.
+8. Evaliate the OPA for policy decision
+9. pass input json and multi query to OPA server based on rule what user selects
+10. send the OPA decision logs to central server
